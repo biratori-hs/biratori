@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 110 110'><ellipse cx='55' cy='68' rx='50' ry='45' fill='%23e8453c'/><ellipse cx='38' cy='52' rx='13' ry='9' fill='%23f07070' opacity='0.45'/><rect x='51' y='14' width='8' height='18' rx='4' fill='%232d6a2d'/><path d='M55 28 Q40 10 30 20 Q44 24 55 28Z' fill='%233d8b3d'/><path d='M55 28 Q70 10 80 20 Q66 24 55 28Z' fill='%234fa84f'/></svg>">
+<title>第39回 平高祭 | 平取高校 学校祭 2025</title>
+<meta name="description" content="第39回 平高祭（平取高校 学校祭）を2026年7月4日（土）に開催します。テーマは「Be Real ~ありのままの青春を見ろっ~」。北海道平取町の平取高等学校へぜひお越しください。">
+<meta name="keywords" content="平取,平取高校,平高祭,びらこうさい,学校祭,平取町,北海道平取,平取高等学校,文化祭,平取イベント">
+<meta property="og:title" content="第39回 平高祭 | 平取高校 学校祭 2025">
+<meta property="og:description" content="2026年7月4日（土）開催。テーマ「Be Real ~ありのままの青春を見ろっ~」平取高等学校の学校祭へぜひ！">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;700;900&family=Shippori+Mincho:wght@400;700&family=Oswald:wght@300;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #e8453c;
+    --red-light: #fdf0ef;
+    --red-mid: #f5a09b;
+    --white: #ffffff;
+    --dark: #1e1e1e;
+    --gray: #999;
+    --border: #f0dedd;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--white);
+    color: var(--dark);
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 56px;
+  }
+  .nav-logo {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--red);
+    letter-spacing: 0.1em;
+  }
+  .nav-sub {
+    font-size: 0.68rem;
+    color: var(--gray);
+    letter-spacing: 0.2em;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 24px 80px;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-circle {
+    position: absolute;
+    top: -180px; right: -180px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: var(--red-light);
+    z-index: 0;
+  }
+  .hero-circle2 {
+    position: absolute;
+    bottom: -120px; left: -120px;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    z-index: 0;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-number {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 0.75rem;
+    color: var(--red);
+    letter-spacing: 0.5em;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+  .hero-tomato {
+    width: 110px; height: 110px;
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.3s;
+    filter: drop-shadow(0 8px 24px rgba(232,69,60,0.2));
+  }
+  .hero-title {
+    font-weight: 900;
+    font-size: clamp(3.5rem, 12vw, 7.5rem);
+    color: var(--dark);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.4s;
+  }
+  .hero-title .accent { color: var(--red); }
+  .hero-theme-wrap {
+    margin-top: 36px;
+    padding: 18px 32px;
+    border: 1.5px solid var(--border);
+    border-radius: 100px;
+    background: var(--red-light);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+  }
+  .hero-theme-label {
+    font-size: 0.62rem;
+    color: var(--red);
+    letter-spacing: 0.35em;
+    display: block;
+    margin-bottom: 4px;
+    text-align: center;
+  }
+  .hero-theme {
+    font-family: 'Shippori Mincho', serif;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    color: var(--dark);
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+  .hero-copy {
+    margin-top: 40px;
+    font-size: clamp(1rem, 3vw, 1.4rem);
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 0.12em;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.8s;
+  }
+  .hero-date-badge {
+    margin-top: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--red);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 100px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1s;
+  }
+  .hero-scroll {
+    position: absolute;
+    bottom: 32px; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray);
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    animation: scrollBounce 2s ease infinite;
+  }
+  .hero-scroll::after {
+    content: '';
+    display: block;
+    width: 1px; height: 36px;
+    background: linear-gradient(to bottom, var(--red-mid), transparent);
+  }
+  @keyframes scrollBounce {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== RED BAND ===== */
+  .red-band {
+    background: var(--red);
+    color: #fff;
+    padding: 48px 24px;
+    text-align: center;
+  }
+  .red-band-title {
+    font-weight: 900;
+    font-size: clamp(1.1rem, 3.5vw, 1.6rem);
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+  .red-band-sub {
+    font-size: 0.82rem;
+    opacity: 0.75;
+    letter-spacing: 0.15em;
+    font-family: 'Shippori Mincho', serif;
+  }
+
+  /* ===== SECTION ===== */
+  .section {
+    padding: 80px 24px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 0.68rem;
+    letter-spacing: 0.45em;
+    color: var(--red);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .section-title {
+    font-weight: 900;
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+  .divider {
+    width: 36px; height: 3px;
+    background: var(--red);
+    border-radius: 2px;
+    margin-bottom: 36px;
+  }
+  .sep {
+    width: 100%; height: 1px;
+    background: var(--border);
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  /* ===== INFO CARDS ===== */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .info-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 22px;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .info-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--red);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+  }
+  .info-card:hover { border-color: var(--red-mid); transform: translateY(-3px); box-shadow: 0 8px 28px rgba(232,69,60,0.1); }
+  .info-card:hover::before { transform: scaleX(1); }
+  .info-card-icon { font-size: 1.5rem; margin-bottom: 12px; }
+  .info-card-label { font-size: 0.65rem; color: var(--gray); letter-spacing: 0.25em; margin-bottom: 6px; text-transform: uppercase; }
+  .info-card-value { font-weight: 700; font-size: 1rem; line-height: 1.5; color: var(--dark); }
+  .info-card-note { margin-top: 8px; font-size: 0.75rem; color: var(--gray); line-height: 1.7; }
+
+  /* ===== TIMELINE ===== */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 5px; top: 10px; bottom: 10px;
+    width: 2px;
+    background: var(--border);
+  }
+  .timeline-item { position: relative; padding: 0 0 30px 24px; }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -5px; top: 8px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2.5px solid var(--red);
+  }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item:last-child::before { background: var(--red); }
+  .timeline-time { font-family: 'Oswald', sans-serif; font-size: 1.2rem; font-weight: 600; color: var(--red); letter-spacing: 0.05em; }
+  .timeline-desc { font-size: 0.85rem; color: var(--dark); margin-top: 3px; line-height: 1.6; }
+  .timeline-note { display: inline-block; margin-top: 4px; font-size: 0.72rem; color: var(--red); background: var(--red-light); padding: 2px 10px; border-radius: 20px; }
+
+  /* ===== COMING SOON ===== */
+  .coming-block {
+    background: var(--red-light);
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 56px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .coming-block::before {
+    content: '🍅';
+    position: absolute;
+    font-size: 8rem;
+    top: -20px; right: -20px;
+    opacity: 0.07;
+    line-height: 1;
+  }
+  .coming-tag { display: inline-block; background: var(--red); color: #fff; font-size: 0.62rem; letter-spacing: 0.3em; padding: 5px 14px; border-radius: 20px; font-weight: 700; margin-bottom: 18px; text-transform: uppercase; }
+  .coming-title { font-weight: 900; font-size: clamp(1.4rem, 4vw, 2rem); color: var(--dark); margin-bottom: 12px; }
+  .coming-desc { font-size: 0.88rem; color: var(--gray); line-height: 1.9; }
+  .coming-dots { display: flex; justify-content: center; gap: 8px; margin-top: 28px; }
+  .coming-dots span { width: 7px; height: 7px; border-radius: 50%; background: var(--red); opacity: 0.35; animation: dotPulse 1.4s ease infinite; }
+  .coming-dots span:nth-child(2) { animation-delay: 0.2s; }
+  .coming-dots span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes dotPulse {
+    0%,100% { opacity: 0.25; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.4); }
+  }
+
+  .fw-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 32px;
+  }
+  /* スマホ：左右に並べて高さをずらす */
+  @media (max-width: 600px) {
+    .fw-layout {
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: flex-start;
+      gap: 0;
+      margin-bottom: 24px;
+    }
+    .fw-layout svg:nth-child(1) {
+      margin-top: 0px;
+    }
+    .fw-layout svg:nth-child(2) {
+      margin-top: 56px;
+    }
+    .fw-layout svg {
+      width: 160px;
+      height: 160px;
+    }
+  }
+
+  /* ===== ENNICHI ===== */
+  .ennichi-section {
+    padding: 80px 24px;
+    background: #1a0a00;
+    position: relative;
+    overflow: hidden;
+  }
+  .ennichi-section::before {
+    content: '🏮　🏮　🏮　🏮　🏮　🏮　🏮';
+    position: absolute;
+    top: 16px; left: 0; right: 0;
+    text-align: center;
+    font-size: 1.2rem;
+    opacity: 0.4;
+    letter-spacing: 1.5em;
+  }
+  .ennichi-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .ennichi-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 0.68rem;
+    letter-spacing: 0.45em;
+    color: #f5a623;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .ennichi-title {
+    font-weight: 900;
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .ennichi-divider {
+    width: 36px; height: 3px;
+    background: linear-gradient(to right, #f5a623, #e8453c);
+    border-radius: 2px;
+    margin-bottom: 28px;
+  }
+  .ennichi-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .ennichi-meta-item {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(245,166,35,0.3);
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.6;
+  }
+  .ennichi-meta-label {
+    font-size: 0.62rem;
+    color: #f5a623;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+  .ennichi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .ennichi-card {
+    background: linear-gradient(135deg, #c0392b, #e8453c);
+    border-radius: 16px;
+    padding: 24px 12px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(232,69,60,0.4);
+  }
+  .ennichi-card:nth-child(2) {
+    background: linear-gradient(135deg, #d4700a, #f5a623);
+    box-shadow: 0 4px 16px rgba(245,166,35,0.4);
+  }
+  .ennichi-card:nth-child(3) {
+    background: linear-gradient(135deg, #8e6b00, #f5c842);
+    box-shadow: 0 4px 16px rgba(245,200,66,0.4);
+  }
+  .ennichi-card::before {
+    content: '';
+    position: absolute;
+    top: -20px; right: -20px;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+  }
+  .ennichi-card-name {
+    font-weight: 900;
+    font-size: 1rem;
+    color: #fff;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  }
+  .ennichi-card-price {
+    display: inline-block;
+    background: rgba(255,255,255,0.25);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-top: 8px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== FIREWORKS ===== */
+  .fireworks-section {
+    background: #0a0a1a;
+    padding: 64px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .fireworks-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 40%, rgba(255,200,50,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 60%, rgba(255,100,150,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 20%, rgba(100,180,255,0.07) 0%, transparent 45%);
+  }
+  .fireworks-section::after {
+    content: '✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦';
+    position: absolute;
+    top: 12px; left: 0; right: 0;
+    text-align: center;
+    font-size: 0.5rem;
+    color: rgba(255,255,255,0.15);
+    letter-spacing: 0.8em;
+  }
+  .fireworks-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .fireworks-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    font-size: 0.68rem;
+    letter-spacing: 0.45em;
+    color: #f5c842;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .fireworks-title {
+    font-weight: 900;
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+  .fireworks-divider {
+    width: 36px; height: 3px;
+    background: linear-gradient(to right, #f5c842, #ff6b9d);
+    border-radius: 2px;
+    margin-bottom: 32px;
+  }
+  .fw-burst { animation: fwPulse 2.5s ease-in-out infinite; transform-origin: center; }
+  .fw-burst:nth-child(2) { animation-delay: 0.6s; }
+  .fw-burst:nth-child(3) { animation-delay: 1.2s; }
+  @keyframes fwPulse {
+    0%, 100% { opacity: 0.7; transform: scale(0.95); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+  .fireworks-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin-bottom: 16px;
+  }
+  .fireworks-time {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #f5c842;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+  .fireworks-desc {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.85);
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .fireworks-notes {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .fireworks-note-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+  }
+  .fireworks-note-item .note-icon { color: #ff6b9d; flex-shrink: 0; margin-top: 1px; }
+  .rain-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(100,180,255,0.15);
+    border: 1px solid rgba(100,180,255,0.3);
+    color: #7ec8f5;
+    font-size: 0.72rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    margin-left: 8px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== MAP ===== */
+  .map-wrap { border-radius: 16px; overflow: hidden; border: 1.5px solid var(--border); }
+  .map-wrap iframe { width: 100%; height: 280px; border: none; display: block; }
+  .map-address { padding: 16px 20px; font-size: 0.82rem; color: var(--gray); line-height: 1.7; background: var(--red-light); }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 40px 24px;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    line-height: 2.2;
+  }
+  footer strong { display: block; color: rgba(255,255,255,0.85); font-size: 0.95rem; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+
+
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-circle"></div>
+  <div class="hero-circle2"></div>
+  <div class="hero-inner">
+    <p class="hero-number">THE 39th FESTIVAL</p>
+    <svg class="hero-tomato" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="55" cy="65" rx="50" ry="45" fill="#e8453c"/>
+      <ellipse cx="38" cy="52" rx="13" ry="9" fill="#f07070" opacity="0.45"/>
+      <rect x="51" y="14" width="8" height="18" rx="4" fill="#2d6a2d"/>
+      <path d="M55 28 Q40 10 30 20 Q44 24 55 28Z" fill="#3d8b3d"/>
+      <path d="M55 28 Q70 10 80 20 Q66 24 55 28Z" fill="#4fa84f"/>
+      <path d="M55 28 Q51 8 41 5 Q48 16 55 28Z" fill="#2d6a2d"/>
+    </svg>
+    <h1 class="hero-title">平<span class="accent">高</span>祭</h1>
+    <div class="hero-theme-wrap">
+      <span class="hero-theme-label">THEME</span>
+      <p class="hero-theme">Be Real ~ありのままの青春を見ろっ~</p>
+    </div>
+    <p class="hero-copy">さあ、ありのままで行こう。</p>
+    <div class="hero-date-badge">📅 2026年7月4日（土）</div>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</div>
+
+<div class="red-band">
+  <p class="red-band-title">北海道平取高等学校 全学年が作る、学校祭。</p>
+  <p class="red-band-sub">1年生・2年生・3年生、全員でつくる ありのままの青春。</p>
+</div>
+
+<div class="section">
+  <p class="section-label">Information</p>
+  <h2 class="section-title">開催情報</h2>
+  <div class="divider"></div>
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="info-card-icon">📅</div>
+      <div class="info-card-label">Date</div>
+      <div class="info-card-value">2026年7月4日（土）</div>
+      <div class="info-card-note">10:30 〜 14:50</div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">📍</div>
+      <div class="info-card-label">Place</div>
+      <div class="info-card-value">北海道平取高等学校</div>
+      <div class="info-card-note">〒055-0107<br>北海道沙流郡平取町本町109-2</div>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">🏫</div>
+      <div class="info-card-label">Class</div>
+      <div class="info-card-value">1年生・2年生・3年生</div>
+      <div class="info-card-note">みんなで作る、ありのままの学校祭。</div>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- 前夜祭 花火 -->
+<div class="fireworks-section">
+  <div class="fireworks-inner">
+    <p class="fireworks-label">Eve Festival</p>
+    <p style="color:#f5c842; font-size:1.1rem; font-weight:700; letter-spacing:0.1em; margin-bottom:12px;">7月3日（金）</p>
+    <h2 class="fireworks-title">🎆 前夜祭 花火</h2>
+    <div class="fireworks-divider"></div>
+
+    <!-- 花火SVGイラスト -->
+    <div class="fw-layout">
+      <!-- 花火1つ目：金×ピンク -->
+      <svg width="200" height="200" viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg">
+        <g class="fw-burst">
+          <!-- 16本の光線 -->
+          <line x1="0" y1="0" x2="0" y2="-75" stroke="#f5c842" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="29" y2="-70" stroke="#ff6b9d" stroke-width="2" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="53" y2="-53" stroke="#f5c842" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="70" y2="-29" stroke="#ff6b9d" stroke-width="2" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="75" y2="0" stroke="#f5c842" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="70" y2="29" stroke="#ff6b9d" stroke-width="2" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="53" y2="53" stroke="#b388ff" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="29" y2="70" stroke="#ff6b9d" stroke-width="2" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="0" y2="75" stroke="#f5c842" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="-29" y2="70" stroke="#ff6b9d" stroke-width="2" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="-53" y2="53" stroke="#b388ff" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="-70" y2="29" stroke="#ff6b9d" stroke-width="2" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="-75" y2="0" stroke="#f5c842" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="-70" y2="-29" stroke="#ff6b9d" stroke-width="2" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="-53" y2="-53" stroke="#f5c842" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="-29" y2="-70" stroke="#ff6b9d" stroke-width="2" stroke-linecap="round"/>
+          <!-- 先端の玉 -->
+          <circle cx="0" cy="-75" r="5" fill="#f5c842"/>
+          <circle cx="29" cy="-70" r="4" fill="#ff6b9d"/>
+          <circle cx="53" cy="-53" r="5" fill="#f5c842"/>
+          <circle cx="70" cy="-29" r="4" fill="#ff6b9d"/>
+          <circle cx="75" cy="0" r="5" fill="#f5c842"/>
+          <circle cx="70" cy="29" r="4" fill="#ff6b9d"/>
+          <circle cx="53" cy="53" r="5" fill="#b388ff"/>
+          <circle cx="29" cy="70" r="4" fill="#ff6b9d"/>
+          <circle cx="0" cy="75" r="5" fill="#f5c842"/>
+          <circle cx="-29" cy="70" r="4" fill="#ff6b9d"/>
+          <circle cx="-53" cy="53" r="5" fill="#b388ff"/>
+          <circle cx="-70" cy="29" r="4" fill="#ff6b9d"/>
+          <circle cx="-75" cy="0" r="5" fill="#f5c842"/>
+          <circle cx="-70" cy="-29" r="4" fill="#ff6b9d"/>
+          <circle cx="-53" cy="-53" r="5" fill="#f5c842"/>
+          <circle cx="-29" cy="-70" r="4" fill="#ff6b9d"/>
+          <!-- 中心 -->
+          <circle cx="0" cy="0" r="8" fill="#fff" opacity="0.95"/>
+          <circle cx="0" cy="0" r="4" fill="#f5c842"/>
+        </g>
+        <!-- 打ち上げ線 -->
+        <line x1="0" y1="85" x2="0" y2="98" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4 3"/>
+      </svg>
+
+      <!-- 花火2つ目：水色×緑 -->
+      <svg width="200" height="200" viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg">
+        <g class="fw-burst" style="animation-delay:0.9s">
+          <line x1="0" y1="0" x2="0" y2="-75" stroke="#7ec8f5" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="29" y2="-70" stroke="#98ff98" stroke-width="2" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="53" y2="-53" stroke="#7ec8f5" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="70" y2="-29" stroke="#98ff98" stroke-width="2" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="75" y2="0" stroke="#7ec8f5" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="70" y2="29" stroke="#98ff98" stroke-width="2" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="53" y2="53" stroke="#f5c842" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="29" y2="70" stroke="#98ff98" stroke-width="2" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="0" y2="75" stroke="#7ec8f5" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="-29" y2="70" stroke="#98ff98" stroke-width="2" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="-53" y2="53" stroke="#f5c842" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="-70" y2="29" stroke="#98ff98" stroke-width="2" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="-75" y2="0" stroke="#7ec8f5" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="-70" y2="-29" stroke="#98ff98" stroke-width="2" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="-53" y2="-53" stroke="#7ec8f5" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="0" y1="0" x2="-29" y2="-70" stroke="#98ff98" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="0" cy="-75" r="5" fill="#7ec8f5"/>
+          <circle cx="29" cy="-70" r="4" fill="#98ff98"/>
+          <circle cx="53" cy="-53" r="5" fill="#7ec8f5"/>
+          <circle cx="70" cy="-29" r="4" fill="#98ff98"/>
+          <circle cx="75" cy="0" r="5" fill="#7ec8f5"/>
+          <circle cx="70" cy="29" r="4" fill="#98ff98"/>
+          <circle cx="53" cy="53" r="5" fill="#f5c842"/>
+          <circle cx="29" cy="70" r="4" fill="#98ff98"/>
+          <circle cx="0" cy="75" r="5" fill="#7ec8f5"/>
+          <circle cx="-29" cy="70" r="4" fill="#98ff98"/>
+          <circle cx="-53" cy="53" r="5" fill="#f5c842"/>
+          <circle cx="-70" cy="29" r="4" fill="#98ff98"/>
+          <circle cx="-75" cy="0" r="5" fill="#7ec8f5"/>
+          <circle cx="-70" cy="-29" r="4" fill="#98ff98"/>
+          <circle cx="-53" cy="-53" r="5" fill="#7ec8f5"/>
+          <circle cx="-29" cy="-70" r="4" fill="#98ff98"/>
+          <circle cx="0" cy="0" r="8" fill="#fff" opacity="0.95"/>
+          <circle cx="0" cy="0" r="4" fill="#7ec8f5"/>
+        </g>
+        <line x1="0" y1="85" x2="0" y2="98" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="4 3"/>
+      </svg>
+    </div>
+
+    <div class="fireworks-card">
+      <div class="fireworks-time">19:30 頃〜</div>
+      <div class="fireworks-desc">
+        花火開始
+        <span class="rain-badge">☔ 雨天時は延期</span>
+      </div>
+      <div class="fireworks-notes">
+        <div class="fireworks-note-item">
+          <span class="note-icon">▼</span>
+          <span>花火を延期する場合は、打ち上げ日時を予告し打ち上げのみ実施します。生徒が集まるなどの行事は行いません。</span>
+        </div>
+        <div class="fireworks-note-item">
+          <span class="note-icon">▼</span>
+          <span>延期の場合でも、日程の変更はありません。</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<div class="section">
+  <h2 class="section-title">当日のスケジュール</h2>
+  <div class="divider"></div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-time">10:30</div>
+      <div class="timeline-desc">開会 / オープン</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">10:30 〜 13:30</div>
+      <div class="timeline-desc">クラス企画・各種展示・模擬店 営業中</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">13:30</div>
+      <div class="timeline-desc">クラス企画・模擬店 営業終了</div>
+      <div class="timeline-note">⚠️ 企画系はここまで</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">14:00</div>
+      <div class="timeline-desc">学年パフォーマンス</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-time">14:50</div>
+      <div class="timeline-desc">写真撮影終了後ご退出願います</div>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<div class="section">
+  <p class="section-label">Program</p>
+  <h2 class="section-title">各クラスの企画</h2>
+  <div class="divider"></div>
+  <div class="coming-block">
+    <span class="coming-tag">Coming Soon</span>
+    <h3 class="coming-title">ただいま準備中です</h3>
+    <p class="coming-desc">
+      1年生・2年生・3年生、それぞれが<br>
+      最高の企画を鋭意準備中。<br>
+      お楽しみに！
+    </p>
+    <div class="coming-dots">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- 縁日コーナー -->
+<div class="ennichi-section">
+  <div class="ennichi-inner">
+    <p class="ennichi-label">Program</p>
+    <h2 class="ennichi-title">🏮 縁日コーナー</h2>
+    <div class="ennichi-divider"></div>
+
+    <div class="ennichi-meta">
+      <div class="ennichi-meta-item">
+        <div class="ennichi-meta-label">📅 Date</div>
+        7月4日（土）
+      </div>
+      <div class="ennichi-meta-item">
+        <div class="ennichi-meta-label">🕐 Time</div>
+        11:00 〜 13:45
+      </div>
+      <div class="ennichi-meta-item">
+        <div class="ennichi-meta-label">📍 Place</div>
+        格技場
+      </div>
+    </div>
+
+    <div class="ennichi-grid">
+      <div class="ennichi-card">
+        <div class="ennichi-card-name">千本引き</div>
+      </div>
+      <div class="ennichi-card">
+        <div class="ennichi-card-name">射的</div>
+      </div>
+      <div class="ennichi-card">
+        <div class="ennichi-card-name">型抜き</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<div class="section">
+  <p class="section-label">Access</p>
+  <h2 class="section-title">アクセス</h2>
+  <div class="divider"></div>
+  <div class="map-wrap">
+    <iframe
+      src="https://www.google.com/maps?q=北海道沙流郡平取町本町109-2&output=embed"
+      allowfullscreen loading="lazy">
+    </iframe>
+    <div class="map-address">
+      📍 〒055-0107 北海道沙流郡平取町本町109-2<br>
+      北海道平取高等学校
+    </div>
+  </div>
+</div>
+
+<footer>
+  <strong>第39回 平高祭</strong>
+  Be Real ~ありのままの青春を見ろっ~<br>
+  2026.7.4 sat　10:30 〜 14:50<br>
+  北海道平取高等学校
+</footer>
+
+</body>
+</html>
